@@ -1,6 +1,8 @@
 
 import TodoItem from "./TodoItem.jsx"
 
+
+
 export default function TodoList(props) {
     
     return (
@@ -13,6 +15,7 @@ export default function TodoList(props) {
             )
         })}
 
+{/* Brug props til at sætte indholdet i child-komponenten fra denne (parent) komponent */}
         {/* <TodoItem title="Køb ind"/>
         <TodoItem title="Persian kan næsten ikke blive sejere"/>
         <TodoItem title="Kat"/>
