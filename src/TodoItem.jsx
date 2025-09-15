@@ -1,5 +1,5 @@
-export default function TodoItem() {
+export default function TodoItem(props) {
     return (
-        <h2>Dette er et eksempel på et todo item</h2>
+        <h2>{props.todo.title}</h2>
     )
 }
