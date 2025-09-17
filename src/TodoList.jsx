@@ -11,7 +11,7 @@ export default function TodoList(props) {
         
         {props.todoItems.map((todo) => {
             return (
-                <TodoItem todo={todo} />
+                <TodoItem key={todo.id.toString()} todo={todo} />
             )
         })}
 

@@ -1,4 +1,4 @@
-export class Todo {
+export default class Todo {
     constructor(id, title, completed, dueDatetime) {
         this.id = id;
         this.title = title;
