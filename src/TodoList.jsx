@@ -9,9 +9,9 @@ export default function TodoList(props) {
     <div style={{border: "2px solid red"}}>
         <h1>Dette er vores todo list. Og Persian er sej.</h1>
         
-        {props.todoItems.map((todo) => {
+        {props.todoItems.map((todoObject) => {
             return (
-                <TodoItem key={todo.id.toString()} todo={todo} />
+                <TodoItem key={todoObject.id.toString()} todo={todoObject} />
             )
         })}
 
