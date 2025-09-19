@@ -3,7 +3,6 @@ export default function TodoItem({todo}) {
 
     // // This coresponds to props.
     // const cake = { name: 'chocolate', price: 10, weight: 500 };
-
     
     // //Without destructuring
     // console.log(cake.name);
@@ -17,7 +16,6 @@ export default function TodoItem({todo}) {
     // console.log(name);
     // console.log(price);
     // console.log(weight);
-
     
 
     return (

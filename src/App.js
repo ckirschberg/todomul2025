@@ -4,17 +4,11 @@ import TodoList from './TodoList'; // her importerer jeg TodoList ind i App.js
 import Todo from "./Todo"
 import { useState } from 'react';
 
-
 // function add5and2(a, b) {
 //   return a + b;
 // }
 // add(5,2);
 // add(7,2);
-
-
-
-
-
 
 function App() {
   const [ happy, setHappy ] = useState(true); // false er startværdien
