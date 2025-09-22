@@ -50,7 +50,7 @@ function App() {
 
         <AddTodo setTodos={setTodos} todos={todos} />
 
-        <TodoList todoItems={todos} />
+        <TodoList todoItems={todos} setTodos={setTodos} />
 
         <a
           className="App-link"

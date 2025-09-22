@@ -11,7 +11,7 @@ export default function TodoList(props) {
         
         {props.todoItems.map((todoObject) => {
             return (
-                <TodoItem key={todoObject.id.toString()} todo={todoObject} />
+                <TodoItem key={todoObject.id.toString()} todo={todoObject} todos={props.todoItems} setTodos={props.setTodos} />
             )
         })}
 

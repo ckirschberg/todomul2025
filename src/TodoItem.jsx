@@ -1,6 +1,6 @@
 import { Flag } from 'lucide-react';
 
-export default function TodoItem({todo}) {
+export default function TodoItem({todo, setTodos, todos}) {
     const isRed = todo.completed ? 'red' : 'green';
     const now = new Date();
 
@@ -22,6 +22,9 @@ export default function TodoItem({todo}) {
     
 
     return (
-        <h2 style={{color: isRed}}>{todo.title} {todo.completed.toString()} {todo.dueDatetime < now && <Flag /> }</h2>
+        <>
+            <h2 style={{color: isRed}}>{todo.title} {todo.completed.toString()} {todo.dueDatetime < now && <Flag /> }</h2>
+            <button onClick={() => setTodos(todos.filter(t => t.id !== todo.id))}>Delete</button>
+        </>
     )
 }
