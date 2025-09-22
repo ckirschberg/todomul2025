@@ -1,5 +1,8 @@
+import { Flag } from 'lucide-react';
+
 export default function TodoItem({todo}) {
     const isRed = todo.completed ? 'red' : 'green';
+    const now = new Date();
 
     // // This coresponds to props.
     // const cake = { name: 'chocolate', price: 10, weight: 500 };
@@ -19,6 +22,6 @@ export default function TodoItem({todo}) {
     
 
     return (
-        <h2 style={{color: isRed}}>{todo.title} {todo.completed.toString()}</h2>
+        <h2 style={{color: isRed}}>{todo.title} {todo.completed.toString()} {todo.dueDatetime < now && <Flag /> }</h2>
     )
 }
