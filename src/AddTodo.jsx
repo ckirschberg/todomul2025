@@ -15,7 +15,7 @@ export default function AddTodo({ setTodos, todos }) {
         setTodos([...todos, newTodoItem ]); //js spread operator
       }
       else {
-        alert("Du skal da udfylde først for søren da")
+        alert("Du skal da 'udfylde' først for 'søren' da")
       }
       // Tilføj newTodoItem til min todo list 
     }

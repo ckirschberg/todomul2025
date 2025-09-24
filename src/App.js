@@ -23,6 +23,18 @@ function App() {
   // Vi 'leger' at vi har hentet disse data fra serveren og databasen.
 
 
+
+  // Two == vs === test
+  // let count = true;
+  // let count2 = 1
+  // if (count == count2) {
+  //   alert("They are all equal in the eyes of the React God")
+  // } else {
+  //   alert("They are NOT equal")
+  // }
+
+
+
     function switchBoolean() {
       // let newHappy = false;
       // if (happy === false) {
