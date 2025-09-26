@@ -23,7 +23,7 @@ export default function TodoItem({todo, setTodos, todos}) {
 
     return (
         <>
-            <h2 style={{color: isRed}}>{todo.title} {todo.completed.toString()} {todo.dueDatetime < now && <Flag /> }</h2>
+            <h2 style={{color: isRed}}>{todo.text} {todo.completed?.toString()} {todo.dueDatetime < now && <Flag /> }</h2>
             <button onClick={() => setTodos(todos.filter(t => t.id !== todo.id))}>Delete</button>
         </>
     )
