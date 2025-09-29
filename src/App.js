@@ -11,11 +11,7 @@ import { createClient } from '@supabase/supabase-js'
 // }
 // add(5,2);
 // add(7,2);
-  const hardCodedTodos = [
-        new Todo(1, 'Køb ind', false, new Date(2025,11,1,12,20)),
-        new Todo(2, 'Gå tur med hunden', true, new Date(2025,0,1,12,20)),
-        new Todo(3, 'Gør Persian endnu sejere', false, new Date(2025,0,1,12,20)),
-    ]
+  
 
 const supabaseUrl = 'https://vrpvsqgakzrxyvbrwmnr.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZycHZzcWdha3pyeHl2YnJ3bW5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4NzkxMDgsImV4cCI6MjA3NDQ1NTEwOH0.pMkzWBrAF8u4kMsH5o6ZP679JI4u0c7CxM-FLZ0XK_0';
@@ -24,25 +20,46 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 function App() {
   const [ happy, setHappy ] = useState(true); // false er startværdien
-  const [ todos, setTodos ] = useState(hardCodedTodos);
+  const [ todos, setTodos ] = useState([]);
   // Vi 'leger' at vi har hentet disse data fra serveren og databasen.
 
-async function getTodos() {
-  let { data, error } = await supabase
-    .from('todos')
-    .select('*')
-  
-  if (error) {
-    console.log(error)
-  } else {
-    console.log(data);
-    
-    setTodos(data)
+
+
+  const getTodos = async () => {
+    const url = 'https://kvsrawgavxkrsvmivjvf.supabase.co/rest/v1';
+    const apikey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2c3Jhd2dhdnhrcnN2bWl2anZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxNDExMzksImV4cCI6MjA3NDcxNzEzOX0.xGPY_82uf8focdGT05Jt62u5Z_oNcoOBzvaFgGb6X1I';
+
+    const data = await fetch(url + "/todos", {
+      headers: {
+        apikey: apikey,
+        Authorization: 'Bearer ' + apikey
+      }
+    }).then(response => response.json())
+
+    setTodos(data);
+    //console.log(data);
   }
-}
-useEffect(() => {
-  getTodos()  
-}, [])
+
+  useEffect(() => {
+    getTodos();
+  }, [])
+
+  
+
+
+// async function getTodos() {
+//   let { data, error } = await supabase
+//     .from('todos')
+//     .select('*')
+  
+//   if (error) {
+//     console.log(error)
+//   } else {
+//     console.log(data);
+    
+//     setTodos(data)
+//   }
+// }
 
 
 

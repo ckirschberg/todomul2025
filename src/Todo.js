@@ -1,9 +1,8 @@
 export default class Todo {
-    constructor(id, title, completed, dueDatetime) {
-        this.id = id;
+    constructor(title, completed, dueDatetime) {
         this.title = title;
         this.completed = completed;
-        this.dueDatetime = dueDatetime;
+        this.due_date = dueDatetime;
     }
 }
 
