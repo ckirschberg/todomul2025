@@ -5,6 +5,8 @@ import Todo from "./Todo"
 import { useEffect, useState } from 'react';
 import AddTodo from './AddTodo';
 import { createClient } from '@supabase/supabase-js'
+import { url, apikey } from './api'
+import SignUp from './SignUp';
 
 // function add5and2(a, b) {
 //   return a + b;
@@ -13,9 +15,9 @@ import { createClient } from '@supabase/supabase-js'
 // add(7,2);
   
 
-const supabaseUrl = 'https://vrpvsqgakzrxyvbrwmnr.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZycHZzcWdha3pyeHl2YnJ3bW5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4NzkxMDgsImV4cCI6MjA3NDQ1NTEwOH0.pMkzWBrAF8u4kMsH5o6ZP679JI4u0c7CxM-FLZ0XK_0';
-const supabase = createClient(supabaseUrl, supabaseKey)
+//const supabaseUrl = 'https://vrpvsqgakzrxyvbrwmnr.supabase.co'
+//const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZycHZzcWdha3pyeHl2YnJ3bW5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4NzkxMDgsImV4cCI6MjA3NDQ1NTEwOH0.pMkzWBrAF8u4kMsH5o6ZP679JI4u0c7CxM-FLZ0XK_0';
+//const supabase = createClient(url, apikey)
 
 
 function App() {
@@ -26,9 +28,6 @@ function App() {
 
 
   const getTodos = async () => {
-    const url = 'https://kvsrawgavxkrsvmivjvf.supabase.co/rest/v1';
-    const apikey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2c3Jhd2dhdnhrcnN2bWl2anZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxNDExMzksImV4cCI6MjA3NDcxNzEzOX0.xGPY_82uf8focdGT05Jt62u5Z_oNcoOBzvaFgGb6X1I';
-
     const data = await fetch(url + "/todos", {
       headers: {
         apikey: apikey,
@@ -93,6 +92,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
+        <SignUp />
+
         <button onClick={switchBoolean}>Are you happy? NO!!!</button>
         <p>
           {happy.toString()}
