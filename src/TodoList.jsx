@@ -1,17 +1,19 @@
 
+import { TodoContext } from "./TodoContext.js";
 import TodoItem from "./TodoItem.jsx"
-
+import { useContext } from "react";
 
 
 export default function TodoList(props) {
-    
+    const { todos } = useContext(TodoContext);
+
     return (
     <div style={{border: "2px solid red"}}>
         <h1>Dette er vores todo list. Og Persian er sej.</h1>
         
-        {props.todoItems.length === 0 && <h2>Loading todos... please wait...</h2>}
+        {todos.length === 0 && <h2>Loading todos... please wait...</h2>}
 
-        {props.todoItems.map((todoObject) => {
+        {todos.map((todoObject) => {
             return (
                 <TodoItem key={todoObject.id?.toString()} todo={todoObject} todos={props.todoItems} setTodos={props.setTodos} />
             )
