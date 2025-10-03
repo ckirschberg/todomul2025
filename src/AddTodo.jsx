@@ -57,13 +57,13 @@ export default function AddTodo({ setTodos, todos }) {
         console.log(e.target.name);
         
         setFormValues((prev) => {
-            return {
+            const updated = {
                 ...prev,
-                [e.target.name]: e.target.value
-            }
+                [e.target.name]: e.target.value,
+            };
+            console.log("Updated form values:", updated);
+            return updated;
         })
-
-        console.log(formValues); // en bagud...
     }
 
 
@@ -73,7 +73,7 @@ export default function AddTodo({ setTodos, todos }) {
         <form onSubmit={addTodo}>
             {/* Opret med name="attributs navn" */}
            <input type="text" placeholder="Title" name="title" value={formValues.title} onChange={handleInputChange}/>
-           <input type="date" placeholder="Due date" name="due_date" value={formValues.due_date} onChange={handleInputChange}/>
+           <input type="datetime-local" placeholder="Due date" name="due_date" value={formValues.due_date} onChange={handleInputChange}/>
            
            <button type="submit">Add todo</button>
          </form>
